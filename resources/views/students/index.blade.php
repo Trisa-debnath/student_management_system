@@ -55,8 +55,8 @@
                         <td>{{ $student->address }}</td>
                         <td>{{ $student->dob }}</td>
                         <td>
-                            <a href="{{ route('students.edit', $student) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('students.destroy', $student) }}" method="POST" style="display:inline;">
+                            <a href="{{ route('student.edit', $student) }}" class="btn btn-warning btn-sm">Edit</a>
+                            <form action="/" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>

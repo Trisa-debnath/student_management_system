@@ -39,8 +39,21 @@ class StudentController extends Controller
         'address'=>'required',
         'dob'=>'required'
     ]);
+    $stu= new student();
+    $stu-> name = $request ->name;
+    $stu-> email = $request ->email;
+    $stu-> phone = $request ->phone;
+    $stu-> address = $request ->address;
+    $stu-> dob = $request ->dob;
 
-    echo "Ok";
+    $stu-> save();
+    return redirect()->back()->with("registation success");
+    
+
+
+
+
+    
     }
 
     /**
@@ -56,7 +69,14 @@ class StudentController extends Controller
      */
     public function edit(student $student)
     {
-        //
+        
+            
+            return view('students.edit');
+    
+
+
+
+
     }
 
     /**

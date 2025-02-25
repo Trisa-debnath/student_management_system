@@ -22,3 +22,5 @@ Route::get('/', function () {
 //Route::resource('students', StudentController::class);
 Route:: get('/student/index',[StudentController::class,'index'])->name('student.index');
 Route:: post('/student/store',[StudentController::class,'store'])->name('student.store');
+
+Route:: get('/student/edit',[StudentController::class,'edit'])->name('student.edit');
