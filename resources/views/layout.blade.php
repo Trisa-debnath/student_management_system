@@ -14,7 +14,9 @@
             <h2 class="text-center">Dashboard</h2>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a href="{{ route('student.index') }}" class="nav-link text-white">Student</a>
+                    <a href="{{ route('student.index') }}" class="nav-link text-white">Student
+                        
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a href="/" class="nav-link text-white">Courses</a>
