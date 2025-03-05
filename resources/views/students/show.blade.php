@@ -31,11 +31,16 @@
                         <td>{{ $student->address }}</td>
                         <td>{{ $student->dob }}</td>
                         <td>
-                            <a href="{{ route('student.edit', $student) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="/" method="POST" style="display:inline;">
+                            <a href="{{ route('student.edit', $student->id) }}" method="GET"  class="btn btn-warning btn-sm">Edit</a>
+                            <form action="{{ route('student.update', $student->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    
+                                <a href="{{ route('student.delete', $student->id) }}" method="GET"  class="btn btn-warning btn-sm">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete
+                                </a>
+
+                                </button>
                             </form>
                         </td>
                     </tr>

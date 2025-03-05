@@ -54,7 +54,7 @@ class StudentController extends Controller
     //return redirect()->back()->with("registation success");
 
 
-    return redirect()->route('student.index')->with('success', 'Student created successfully.');
+    return redirect()->route('student.index')->with('success');
     
 
 
@@ -77,11 +77,11 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(student $student)
+    public function edit($id)
     {
-        
+        $student = student::find ($id);
             
-            return view('students.edit');
+            return view('students.edit',compact('student'));
     
 
 
@@ -92,16 +92,34 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, student $student)
+    public function update(Request $request, $id)
     {
-        //
+        student::where('id', $id)->update([
+            'name'=> $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'dob' => $request->dob
+        ]);
+     
+ return redirect()-> route('student.show')->with('success','student update successfully.');
+
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(student $student)
+    public function destroy($id)
     {
-        //
+        $student = student::find ($id);
+        $student -> delete();
+
+
+        return redirect()-> route('student.show')->with('error','student Deleted successfully.');
+
+    
+
+
     }
 }
