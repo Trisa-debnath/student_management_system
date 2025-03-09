@@ -1,6 +1,7 @@
 
 @extends('layout')
 
+
 @section('content')
     <div class="container">
         <h1 class="mb-4">Login Student account</h1>
