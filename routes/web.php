@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -35,3 +36,7 @@ Route:: get('/student/edit/{id}',[StudentController::class,'edit'])->name('stude
 
 Route:: POST('/student/update/{id}',[StudentController::class,'update'])->name('student.update');
 Route:: get('/student/delete/{id}',[StudentController::class,'destroy'])->name('student.delete');
+
+//subject
+Route::get('/subject/create',[SubjectController::class,'index'])->name('subject.create');
+Route:: POST('/subject/store',[StudentController::class,'store'])->name('subject.store');

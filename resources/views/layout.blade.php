@@ -19,19 +19,29 @@
                 <li class="nav-item">
                     <a href="{{ route('student.index') }}" class="nav-link text-white">Student
                         
-                    </a>
+                    </a>    
+                </li>
+
+                <!-- subject nav -->
+                
+               
+                <li class="nav-item">
+                <a href="{{ route('subject.create') }}" class="nav-link text-white">Subject
+                        
+                        </a>    
+                 
+            </li>
+
+       
+                  <li class="nav-item">
+                    <a href="#" class="nav-link text-white">Courses</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/" class="nav-link text-white">Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/" class="nav-link text-white">Logout</a>
+                    <a href="#" class="nav-link text-white">Logout</a>
                 </li>
             </ul>
         </div>
-
-        
-        <div class="container-fluid p-4" style="width: calc(100% - 250px);">
+  <div class="container-fluid p-4" style="width: calc(100% - 250px);">
             @yield('content')
         </div>
     </div>
