@@ -11,7 +11,9 @@ class SubjectController extends Controller
      * Display a listing of the resource.
      */
     public function index()
+
     {
+
         return view('subjects.index');
     }
 
@@ -34,19 +36,25 @@ class SubjectController extends Controller
             
         ]);
         
-       $Subject = new subject();
-       $Subject->name = $request ->name;
-       $Subject->type = $request ->type;
-       $Subject->save();
-       return redirect()->back()->with('success',"Subject added Successfully.");
+       $Sub = new subject();
+       $Sub->name = $request ->name;
+       $Sub->type = $request ->type;
+       $Sub->save();
+       redirect()->route('subject.show')->with('success',$Sub->name." added Successfully.");
+      
+
     }
+
+   
 
     /**
      * Display the specified resource.
      */
-    public function show(subject $subject)
+    public function show()
     {
-        //
+$subj=subject::all();
+
+        return view('subjects.list',compact('subj'));
     }
 
     /**

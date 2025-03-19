@@ -20,6 +20,14 @@ Route::get('/', function () {
     return view('layout');
    
 });
+
+Route::get('/', function () {
+    return view('dashboard');
+   
+});
+
+
+
 //Route::resource('students', StudentController::class);
 Route:: get('/student/index',[StudentController::class,'index'])->name('student.index');
 
@@ -39,4 +47,5 @@ Route:: get('/student/delete/{id}',[StudentController::class,'destroy'])->name('
 
 //subject
 Route::get('/subject/create',[SubjectController::class,'index'])->name('subject.create');
-Route:: POST('/subject/store',[StudentController::class,'store'])->name('subject.store');
+Route:: POST('/subject/store',[SubjectController::class,'store'])->name('subject.store');
+Route::get('/subject/show',[SubjectController::class,'show'])->name('subject.show');
