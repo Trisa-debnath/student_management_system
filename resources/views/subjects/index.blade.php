@@ -1,12 +1,9 @@
 
 @extends('layout')
-
-
 @section('content')
     <div class="container">
         <h1 class="mb-4">Subject Management</h1>
         <div class="div" style="color: green;"><h5>Add new subject</h5></div>
-        <!-- <a href="#" class="btn btn-primary mb-3">Add New class</a>-->
 
         <!-- Subject Form -->
         <form action="{{ route('subject.store') }}" method="POST" class="mb-4">

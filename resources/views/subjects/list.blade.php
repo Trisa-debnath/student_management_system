@@ -4,11 +4,11 @@
 @section('content')
     <div class="container">
         <h1 class="mb-4">Selected Subject list</h1>
-        <a href="{{ route('student.index') }}" class="btn btn-primary mb-3">Back</a>
+       
 
      
 
-        <!-- Student Table -->
+        <!-- Subject Table -->
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -27,18 +27,20 @@
                         <td>{{ $subject->name }}</td>
                         <td>{{ $subject->type }}</td>
                     
-                         <td>  <a href="#" method="GET"  class="btn btn-warning btn-sm">Edit</a>
+                         <td>  <a href="{{ route('subject.edit', $subject->id) }}" method="GET"  class="btn btn-warning btn-sm">Edit</a>
                             
-                            <form action="#" method="POST" style="display:inline;"></td>
+                            <form action="{{ route('subject.update', $subject->id) }}" method="POST" style="display:inline;"></td>
                            
-
+                            
                         <td>
                         @csrf
                                 @method('DELETE')
                     
-                                <a href="#" method="GET"  class="btn btn-warning btn-sm">
+                                <a href="{{ route('subject.delete', $subject->id) }}" method="GET"  class="btn btn-warning btn-sm">
                                 <button type="submit" class="btn btn-danger btn-sm">Delete
                                 </a>
+
+                                
 
                                 </button>
                             </form>

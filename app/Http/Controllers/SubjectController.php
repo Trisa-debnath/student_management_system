@@ -40,7 +40,7 @@ class SubjectController extends Controller
        $Sub->name = $request ->name;
        $Sub->type = $request ->type;
        $Sub->save();
-       redirect()->route('subject.show')->with('success',$Sub->name." added Successfully.");
+       return redirect()->back()->with('success',$Sub->name." added Successfully.");
       
 
     }
@@ -60,24 +60,36 @@ $subj=subject::all();
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(subject $subject)
+    public function edit($id)
     {
-        //
+        $subject = subject::find($id);
+        return view('subjects.edit', compact('subject'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, subject $subject)
+    public function update(Request $request,$id)
     {
-        //
+       subject::where('id',$id)->update([
+           'name'=> $request->name,
+           'type'=> $request->type,
+           
+        ]);
+        return redirect()-> route('subject.show')->with('success','subject update successfully.');
+
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(subject $subject)
+    public function destroy($id)
     {
-        //
+        $subject = subject::find($id);
+        $subject->delete();
+
+        return redirect()-> route('subject.show')->with('error','subject deleted successfully.');
+
     }
 }

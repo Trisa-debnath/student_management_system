@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="mb-4">update student</h1>
+        <h1 class="mb-4">Update student</h1>
         <a href="{{{ route('student.show') }}}" class="btn btn-primary mb-3">Go to back</a>
 
         <!-- Student Form -->
