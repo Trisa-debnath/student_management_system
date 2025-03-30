@@ -5,12 +5,21 @@
         <h1 class="mb-4">Subject Management</h1>
         <div class="div" style="color: green;"><h5>Add new subject</h5></div>
 
+
+        <div class="message">
+@if(session('success'))
+<h3 class="mb-4">{{session('success')}}</h3>
+@endif
+
+</div>
+
+
         <!-- Subject Form -->
         <form action="{{ route('subject.store') }}" method="POST" class="mb-4">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label"> Subject Name</label>
-                <input type="text" name="name" id="name" class="form-control" required>
+                <input type="text" name="name" id="name" value="{{old('name')}}" class="form-control" required>
             </div>
             @error ('name')
             <p class="text danger">{{$message}}

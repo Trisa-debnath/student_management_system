@@ -39,7 +39,7 @@
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
 
-        <!-- Student Table -->
+        
         
     </div>
 @endsection

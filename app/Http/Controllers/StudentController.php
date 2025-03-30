@@ -27,9 +27,9 @@ class StudentController extends Controller
      */
     public function create()
     {
-       //$stud=student::all();
+       
         return view('students.create');
-        //,compact('stud')
+        
     }
 
     /**
@@ -71,7 +71,7 @@ class StudentController extends Controller
         $show=student::all();
         return view('students.show',compact('show'));
         
-       //return view('students.show',compact('student'));
+      
     }
 
     /**

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\TeacherrController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -45,3 +46,14 @@ Route::get('/subject/show',[SubjectController::class,'show'])->name('subject.sho
 Route:: get('/subject/edit/{id}',[SubjectController::class,'edit'])->name('subject.edit');
 Route:: POST('/subject/update/{id}',[SubjectController::class,'update'])->name('subject.update');
 Route:: get('/subject/delete/{id}',[SubjectController::class,'destroy'])->name('subject.delete');
+
+//teacher
+
+Route::get('/teacher/index',[TeacherrController::class,'index'])->name('teacher.index');
+Route::get('/teacher/create',[TeacherrController::class,'create'])->name('teacher.create');
+Route:: POST('/teacher/store',[TeacherrController::class,'store'])->name('teacher.store');
+//Route::get('/teacher/show',[TeacherrController::class,'show'])->name('teacher.show');
+Route:: get('/teacher/edit/{id}',[TeacherrController::class,'edit'])->name('teacher.edit');
+Route:: POST('/teacher/update/{id}',[TeacherrController::class,'update'])->name('teacher.update');
+Route:: get('/teacher/delete/{id}',[TeacherrController::class,'destroy'])->name('teacher.delete');
+

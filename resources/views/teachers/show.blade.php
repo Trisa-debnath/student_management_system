@@ -3,12 +3,14 @@
 
 @section('content')
     <div class="container">
-        <h1 class="mb-4">Selected Subject list</h1>
+        <h1 class="mb-4">Teacher's information</h1>
         
 <div class="message">
 @if(session('success'))
 <h3 class="mb-4">{{session('success')}}</h3>
 @endif
+
+<a href="{{ route('teacher.index') }}" class="btn btn-primary mb-3">Back</a>
 
 </div>
 
@@ -17,30 +19,39 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Subject Name</th>
-                    <th>Type</th>
+                    <th>Teacher's Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Department</th>
+                    <th>class</th>
                     <th>Edit</th>
                     
                     <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($subj as $subject)
+                @foreach ($teach as $teacher)
                     <tr>
-                        <td>{{ $subject->id }}</td>
-                        <td>{{ $subject->name }}</td>
-                        <td>{{ $subject->type }}</td>
+                        <td>{{ $teacher->id }}</td>
+                        <td>{{ $teacher->name }}</td>
+                        <td>{{ $teacher->addrress }}</td>
+                        <td>{{ $teacher->phone }}</td>
+                        <td>{{ $teacher->department }}</td>
+                        <td>{{ $teacher->subject }}</td>
                     
-                         <td>  <a href="{{ route('subject.edit', $subject->id) }}" method="GET"  class="btn btn-warning btn-sm">Edit</a>
+                         <td>  <a href="#" method="GET"  class="btn btn-warning btn-sm">Edit</a>
                             
-                            <form action="{{ route('subject.update', $subject->id) }}" method="POST" style="display:inline;"></td>
+                            <form action="#" method="POST" style="display:inline;"></td>
+
+
+                            <td>  <a href="#" method="GET"  class="btn btn-warning btn-sm">View</a></td>
                            
                             
                         <td>
                         @csrf
                                 @method('DELETE')
                     
-                                <a href="{{ route('subject.delete', $subject->id) }}" method="GET"  class="btn btn-warning btn-sm">
+                                <a href="#" method="GET"  class="btn btn-warning btn-sm">
                                 <button type="submit" class="btn btn-danger btn-sm">Delete
                                 </a>
 

@@ -40,7 +40,7 @@ class SubjectController extends Controller
        $Sub->name = $request ->name;
        $Sub->type = $request ->type;
        $Sub->save();
-       return redirect()->back()->with('success',$Sub->name." added Successfully.");
+       return redirect()->route('subject.create')->with('success',$Sub->name." added Successfully.");
       
 
     }
@@ -52,7 +52,7 @@ class SubjectController extends Controller
      */
     public function show()
     {
-$subj=subject::all();
+         $subj=subject::all();
 
         return view('subjects.list',compact('subj'));
     }

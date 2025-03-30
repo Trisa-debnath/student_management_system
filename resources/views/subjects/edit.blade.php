@@ -7,6 +7,9 @@
         <h1 class="mb-4">Update Subject</h1>
         
          <a href="{{ route('subject.show') }}" class="btn btn-primary mb-3">Back</a>
+
+
+         
       
         <!-- Subject Form -->
         <form action="{{ route('subject.update',$subject->id) }}" method="POST" class="mb-4">

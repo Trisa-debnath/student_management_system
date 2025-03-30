@@ -65,6 +65,15 @@
         <a href="{{ route('student.index') }}" class="nav-link text-white"> <i class="fas fa-book"></i>Student
          </a> 
         </li>
+        <li>
+            <a href="#courseSubmenu" data-bs-toggle="collapse"><i class="fas fa-book"></i> Teacher</a>
+            <ul class="collapse list-unstyled" id="courseSubmenu">
+               
+                <li><a href="{{ route('teacher.index') }}">Add Teacher</a></li>
+                <li><a href="#">View Teacher</a></li>
+    
+            </ul>
+        </li>
       
         <li>
             <a href="#courseSubmenu" data-bs-toggle="collapse"><i class="fas fa-book"></i> Subject</a>
