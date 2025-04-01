@@ -87,8 +87,8 @@
         <li>
             <a href="#courseSubmenu" data-bs-toggle="collapse"><i class="fas fa-book"></i> Courses</a>
             <ul class="collapse list-unstyled" id="courseSubmenu">
-                <li><a href="#">All Courses</a></li>
-                <li><a href="#">Add courses</a></li>
+                <li><a href="{{ route('course.index') }}">All Courses</a></li>
+                <li><a href="#">View courses</a></li>
             </ul>
         </li>
 

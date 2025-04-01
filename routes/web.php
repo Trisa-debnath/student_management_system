@@ -3,6 +3,7 @@
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherrController;
+use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -56,4 +57,14 @@ Route:: POST('/teacher/store',[TeacherrController::class,'store'])->name('teache
 Route:: get('/teacher/edit/{id}',[TeacherrController::class,'edit'])->name('teacher.edit');
 Route:: POST('/teacher/update/{id}',[TeacherrController::class,'update'])->name('teacher.update');
 Route:: get('/teacher/delete/{id}',[TeacherrController::class,'destroy'])->name('teacher.delete');
+
+//courses
+
+Route::get('/course/index',[CourseController::class,'index'])->name('course.index');
+Route::get('/course/create',[CourseController::class,'create'])->name('course.create');
+Route:: POST('/course/store',[CourseController::class,'store'])->name('course.store');
+//Route::get('/course/show',[CourseController::class,'show'])->name('course.show');
+Route:: get('/course/edit/{id}',[CourseController::class,'edit'])->name('course.edit');
+Route:: POST('/course/update/{id}',[CourseController::class,'update'])->name('course.update');
+Route:: get('/course/delete/{id}',[CourseController::class,'destroy'])->name('course.delete');
 
