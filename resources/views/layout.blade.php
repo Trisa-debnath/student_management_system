@@ -91,6 +91,9 @@
                 <li><a href="#">View courses</a></li>
             </ul>
         </li>
+        
+         <a href="{{ route('batches.index') }}"   ><i class="fas fa-book"></i> Batches</a>
+        </li>
 
         <li>
             <a href="#"><i class="fas fa-calendar-check"></i> Attendance</a>

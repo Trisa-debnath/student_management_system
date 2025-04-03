@@ -1,9 +1,11 @@
 <?php
 
+
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherrController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\BatchesController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -67,4 +69,16 @@ Route:: POST('/course/store',[CourseController::class,'store'])->name('course.st
 Route:: get('/course/edit/{id}',[CourseController::class,'edit'])->name('course.edit');
 Route:: POST('/course/update/{id}',[CourseController::class,'update'])->name('course.update');
 Route:: get('/course/delete/{id}',[CourseController::class,'destroy'])->name('course.delete');
+
+//batches
+
+Route::get('/batches/index',[BatchesController::class,'index'])->name('batches.index');
+Route::get('/batches/create',[BatchesController::class,'create'])->name('batches.create');
+Route:: POST('/batches/store',[BatchesController::class,'store'])->name('batches.store');
+//Route::get('/batches/show',[BatchesController::class,'show'])->name('batches.show');
+Route:: get('/batches/edit/{id}',[BatchesController::class,'edit'])->name('batches.edit');
+Route:: POST('/batches/update/{id}',[BatchesController::class,'update'])->name('batches.update');
+Route:: get('/batches/delete/{id}',[BatchesController::class,'destroy'])->name('batches.delete');
+
+
 
