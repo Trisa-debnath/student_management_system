@@ -22,6 +22,7 @@ class BatchesController extends Controller
      */
     public function create()
     {
+        
         return view('batches.create');
     }
 
@@ -41,8 +42,6 @@ class BatchesController extends Controller
    $batch->name = $request ->name;
    $batch->course_id = $request ->course_id;
    $batch->start_date = $request ->start_date;
-  
-  
    $batch->save();
    return redirect()->route('batches.index')->with('success',$batch->name." added Successfully.");
   
@@ -89,6 +88,10 @@ class BatchesController extends Controller
         $batche->delete();
 
         return redirect()-> route('batches.index')->with('error','batches deleted successfully.');
-
     }
 }
+
+
+
+
+

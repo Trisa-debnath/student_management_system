@@ -32,7 +32,7 @@ class SubjectController extends Controller
     {
         
             $request->validate(['name'=>'required',
-            'type'=>'required',
+            'type'=>'required'
             
         ]);
         
