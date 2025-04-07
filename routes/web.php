@@ -6,7 +6,9 @@ use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherrController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\BatchesController;
+use App\Http\Controllers\EnrollmentController;
 use Illuminate\Support\Facades\Route;
+
 
 
 /*
@@ -79,6 +81,17 @@ Route:: POST('/batches/store',[BatchesController::class,'store'])->name('batches
 Route:: get('/batches/edit/{id}',[BatchesController::class,'edit'])->name('batches.edit');
 Route:: POST('/batches/update/{id}',[BatchesController::class,'update'])->name('batches.update');
 Route:: get('/batches/delete/{id}',[BatchesController::class,'destroy'])->name('batches.delete');
+
+//enrollment
+
+Route::get('/enroll/index',[EnrollmentController::class,'index'])->name('enroll.index');
+Route::get('/enroll/create',[EnrollmentController::class,'create'])->name('enroll.create');
+Route:: POST('/enroll/store',[EnrollmentController::class,'store'])->name('enroll.store');
+//Route::get('/enroll/show',EnrollmentController::class,'show'])->name('enroll.show');
+Route:: get('/enroll/edit/{id}',[EnrollmentController::class,'edit'])->name('enroll.edit');
+Route:: POST('/enroll/update/{id}',[EnrollmentController::class,'update'])->name('enroll.update');
+Route:: get('/enroll/delete/{id}',[EnrollmentController::class,'destroy'])->name('enroll.delete');
+
 
 
 

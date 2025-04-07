@@ -96,6 +96,10 @@
         </li>
 
         <li>
+            <a href="{{ route('enroll.index') }}"><i class="fas fa-calendar-check"></i>Enrollment</a>
+        </li>
+
+        <li>
             <a href="#"><i class="fas fa-calendar-check"></i> Attendance</a>
         </li>
         <li>
