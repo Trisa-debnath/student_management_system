@@ -11,15 +11,11 @@ class StudentController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-
     {
+    $students = student::all();
 
-        $students=student::all();
-        return view('students.index',compact('students'));
+    return view('students.index',compact('students'));
         
-    
-
-
     }
 
     /**
@@ -27,9 +23,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-       
-        return view('students.create');
-        
+    return view('students.create');
     }
 
     /**
@@ -43,32 +37,26 @@ class StudentController extends Controller
         'address'=>'required',
         'dob'=>'required'
     ]);
-
-    $stu= new student();
-    $stu-> name = $request ->name;
-    $stu-> email = $request ->email;
-    $stu-> phone = $request ->phone;
-    $stu-> address = $request ->address;
-    $stu-> dob = $request ->dob;
-    $stu-> save();
-    return redirect()->route('student.index')->with('success',$stu->name." added Successfully.");
     
-
-
-
-
     
+    $stu = new student();
+    $stu->name = $request ->name;
+    $stu->email = $request ->email;
+    $stu->phone = $request ->phone;
+    $stu->address = $request ->address;
+    $stu->dob = $request ->dob;
+    $stu->save();
+   return redirect()->route('student.index')->with('success',$stu->name." added Successfully.");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(student $student)
+    public function show($id)
     {
-        $show=student::all();
+        $show=student::findOrFail($id);
         return view('students.show',compact('show'));
-        
-      
+    
     }
 
     /**
@@ -76,14 +64,10 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        $student = student::find ($id);
-            
-            return view('students.edit',compact('student'));
+        $student = student::find($id);
+        return view('students.edit', compact('student'));
+
     
-
-
-
-
     }
 
     /**
@@ -99,9 +83,7 @@ class StudentController extends Controller
             'dob' => $request->dob
         ]);
      
- return redirect()-> route('student.show')->with('success','student update successfully.');
-
-
+ return redirect()-> route('student.index')->with('success','student update successfully.');
     }
 
     /**
@@ -113,10 +95,7 @@ class StudentController extends Controller
         $student -> delete();
 
 
-        return redirect()-> route('student.show')->with('error','student Deleted successfully.');
-
-    
-
+        return redirect()-> route('student.index')->with('error','student Deleted successfully.');
 
     }
 }

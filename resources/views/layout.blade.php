@@ -80,7 +80,7 @@
             <ul class="collapse list-unstyled" id="courseSubmenu">
                
                 <li><a href="{{ route('subject.create') }}">Add Subject</a></li>
-                <li><a href="{{ route('subject.show') }}">View Subject</a></li>
+                <li><a href="#">View Subject</a></li>
     
             </ul>
         </li>

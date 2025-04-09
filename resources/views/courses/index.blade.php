@@ -33,7 +33,7 @@
                         <td>{{ $courses->id }}</td>
                         <td>{{ $courses->name }}</td>
                         <td>{{ $courses->syllabus }}</td>
-                        <td>{{ $courses->duration }}</td>
+                        <td>{{ $courses->duration()}}</td>
                     
                             <td>  <a href="#" method="GET"  class="btn btn-warning btn-sm">View</a></td>
                            

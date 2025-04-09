@@ -2,50 +2,26 @@
 @extends('layout')
 
 @section('content')
-    <div class="container">
-        <h1 class="mb-4">list regestered student</h1>
-        <a href="{{ route('student.index') }}" class="btn btn-primary mb-3">Back</a>
+    <div class="card">
+        
+        <div class="card-header">
+        <h4 class="mb-3">view Student's information</h4>
+        <a href="{{ route('student.index') }}" class="btn btn-primary mb-3">Back</a></div>
 
-     
+        <!-- student edit Form -->
+      
+            @csrf
+           
+            <div class="card-body">
+                <h1 class=" card-title">Name:{{$show->name}}</h1>
+                <p class=" card-text">email:{{$show->email}}</p>
+                <p class=" card-text">phone:{{$show->phone}}</p>
+                <p class=" card-text">address:{{$show->address}}</p>
+                <p class=" card-text">dob:{{$show->dob}}</p>
+                
+            </div>
 
-        <!-- Student Table -->
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                    <th>Date of Birth</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($show as $student)
-                    <tr>
-                        <td>{{ $student->id }}</td>
-                        <td>{{ $student->name }}</td>
-                        <td>{{ $student->email }}</td>
-                        <td>{{ $student->phone }}</td>
-                        <td>{{ $student->address }}</td>
-                        <td>{{ $student->dob }}</td>
-                        <td>
-                            <a href="{{ route('student.edit', $student->id) }}" method="GET"  class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('student.update', $student->id) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                    
-                                <a href="{{ route('student.delete', $student->id) }}" method="GET"  class="btn btn-warning btn-sm">
-                                <button type="submit" class="btn btn-danger btn-sm">Delete
-                                </a>
 
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+          
     </div>
 @endsection

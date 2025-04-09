@@ -20,7 +20,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Batches Name</th>
-                    <th>Course_id</th>
+                    <th>Course</th>
                     <th>Start_date</th>
                     <th>view</th>
                     <th>Edit</th>
@@ -33,10 +33,10 @@
                     <tr>
                         <td>{{ $batch->id }}</td>
                         <td>{{ $batch->name }}</td>
-                        <td>{{ $batch->course_id }}</td>
+                        <td>{{ $batch->course->name}}</td>
                         <td>{{ $batch->start_date}}</td>
                     
-                            <td>  <a href="#" method="GET"  class="btn btn-warning btn-sm">View</a></td>
+                            <td>  <a href="{{ route('batches.show', $batch->id) }}" method="GET"  class="btn btn-warning btn-sm">View</a></td>
                            
                             <td>  <a href="{{ route('batches.edit', $batch->id) }}" method="GET"  class="btn btn-warning btn-sm">Edit</a>
                             

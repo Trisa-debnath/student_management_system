@@ -4,10 +4,16 @@
 @section('content')
     <div class="container">
         <h1 class="mb-4">Fill the form below</h1>
+        <div class="message">
+       @if(session('success'))
+       <h3 class="mb-4">{{session('success')}}</h3>
+        @endif
+        </div>
+
         <a href="{{ route('student.index') }}" class="btn btn-primary mb-3">Back</a>
 
         <!-- Student Form -->
-        <form action="{{ route('student.show') }}" class="mb-4">
+        <form action="{{ route('student.store') }}"  method="POST" class="mb-4">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>

@@ -51,9 +51,10 @@ class BatchesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(batches $batches)
+    public function show($id)
     {
-        //
+        $show=batches::findOrFail($id);
+        return view('batches.show',compact('show'));
     }
 
     /**
