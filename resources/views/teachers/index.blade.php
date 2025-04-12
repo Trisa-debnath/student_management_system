@@ -40,7 +40,7 @@
                         <td>{{ $teacher->department }}</td>
                         <td>{{ $teacher->subject }}</td>
                     
-                            <td>  <a href="#" method="GET"  class="btn btn-warning btn-sm">View</a></td>
+                            <td>  <a href="{{ route('teacher.show', $teacher->id) }}" method="GET"  class="btn btn-warning btn-sm">View</a></td>
                            
                             <td>  <a href="{{ route('teacher.edit', $teacher->id) }}" method="GET"  class="btn btn-warning btn-sm">Edit</a>
                             

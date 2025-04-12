@@ -13,14 +13,16 @@ class enrollment extends Model
     
 //public function batch()
 //{
-  //  return $this->belongsTo(batches::class);
+//    return $this->belongsTo(batches::class);
 //}
-
-
 //public function student()
 //{
- //   return $this->belongsTo(student::class);
+//   return $this->belongsTo(student::class);
 //}
+
+
+
+
 
 
 

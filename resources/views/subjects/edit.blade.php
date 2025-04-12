@@ -6,7 +6,7 @@
     <div class="container">
         <h1 class="mb-4">Update Subject</h1>
         
-         <a href="{{ route('subject.show') }}" class="btn btn-primary mb-3">Back</a>
+         <a href="{{ route('subject.index') }}" class="btn btn-primary mb-3">Back</a>
 
 
          

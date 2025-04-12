@@ -53,9 +53,11 @@ class TeacherrController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(teacherr $teacherr)
+    public function show($id)
     {
-        //
+        $teache=teacherr::findOrFail($id);
+
+        return view('teachers.show',compact('teache'));
     }
 
     /**

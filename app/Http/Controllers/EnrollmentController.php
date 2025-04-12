@@ -53,9 +53,10 @@ class EnrollmentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(enrollment $enrollment)
+    public function show($id)
     {
-        //
+        $show=enrollment::findOrFail($id);
+        return view('enrollments.show',compact('show'));
     }
 
     /**

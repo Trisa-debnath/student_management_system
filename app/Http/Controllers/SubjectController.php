@@ -13,8 +13,8 @@ class SubjectController extends Controller
     public function index()
 
     {
-
-        return view('subjects.index');
+        $subjec = subject::all();
+        return view('subjects.index',compact('subjec'));
     }
 
     /**
@@ -22,7 +22,7 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('subjects.create');
     }
 
     /**
@@ -40,7 +40,7 @@ class SubjectController extends Controller
        $Sub->name = $request ->name;
        $Sub->type = $request ->type;
        $Sub->save();
-       return redirect()->route('subject.create')->with('success',$Sub->name." added Successfully.");
+       return redirect()->route('subject.index')->with('success',$Sub->name." added Successfully.");
       
 
     }
@@ -50,11 +50,11 @@ class SubjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show($id)
     {
-         $subj=subject::all();
+         $subj=subject::findOrFail($id);
 
-        return view('subjects.list',compact('subj'));
+        return view('subjects.show',compact('subj'));
     }
 
     /**
@@ -76,7 +76,7 @@ class SubjectController extends Controller
            'type'=> $request->type,
            
         ]);
-        return redirect()-> route('subject.show')->with('success','subject update successfully.');
+        return redirect()-> route('subject.index')->with('success','subject update successfully.');
 
 
     }
@@ -89,7 +89,7 @@ class SubjectController extends Controller
         $subject = subject::find($id);
         $subject->delete();
 
-        return redirect()-> route('subject.show')->with('error','subject deleted successfully.');
+        return redirect()-> route('subject.index')->with('error','subject deleted successfully.');
 
     }
 }

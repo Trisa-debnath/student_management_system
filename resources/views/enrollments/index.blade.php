@@ -34,12 +34,12 @@
                     <tr>
                         <td>{{ $enrol->id }}</td>
                         <td>{{ $enrol->enroll_no }}</td>
-                        <td>{{ $enrol->batches_id }}</td>
+                        <td>{{ $enrol->batches_id}}</td>
                         <td>{{ $enrol->student_id}}</td>
                         <td>{{ $enrol->join_date}}</td>
                         <td>{{ $enrol->fee}}</td>
                     
-                            <td>  <a href="#" method="GET"  class="btn btn-warning btn-sm">View</a></td>
+                            <td>  <a href="{{ route('enroll.show', $enrol->id) }}" method="GET"  class="btn btn-warning btn-sm">View</a></td>
                            
                             <td>  <a href="{{ route('enroll.edit', $enrol->id) }}" method="GET"  class="btn btn-warning btn-sm">Edit</a>
                             

@@ -1,46 +1,62 @@
 
 @extends('layout')
+
 @section('content')
     <div class="container">
-        <h1 class="mb-4">Subject Management</h1>
-        <div class="div" style="color: green;"><h5>Add new subject</h5></div>
-
-
-        <div class="message">
+        <h1 class="mb-4">Selected Subject list</h1>
+        
+<div class="message">
 @if(session('success'))
 <h3 class="mb-4">{{session('success')}}</h3>
 @endif
 
 </div>
+<a href="{{ route('subject.create') }}" class="btn btn-primary mb-3">Add new subject</a>
+
+        <!-- Subject Table -->
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Subject Name</th>
+                    <th>Type</th>
+                    <th>view</th>
+                    <th>Edit</th>
+                    
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ( $subjec as $subject)
+                    <tr>
+                        <td>{{ $subject->id }}</td>
+                        <td>{{ $subject->name }}</td>
+                        <td>{{ $subject->type }}</td>
 
 
-        <!-- Subject Form -->
-        <form action="{{ route('subject.store') }}" method="POST" class="mb-4">
-            @csrf
-            <div class="mb-3">
-                <label for="name" class="form-label"> Subject Name</label>
-                <input type="text" name="name" id="name" value="{{old('name')}}" class="form-control" required>
-            </div>
-            @error ('name')
-            <p class="text danger">{{$message}}
-                @enderror
+                        <td>  <a href="{{ route('subject.show', $subject->id) }}" method="GET"  class="btn btn-warning btn-sm">View</a></td>
+                    
+                         <td>  <a href="{{ route('subject.edit', $subject->id) }}" method="GET"  class="btn btn-warning btn-sm">Edit</a>
+                            
+                            <form action="{{ route('subject.update', $subject->id) }}" method="POST" style="display:inline;"></td>
+                           
+                            
+                        <td>
+                        @csrf
+                                @method('DELETE')
+                    
+                                <a href="{{ route('subject.delete', $subject->id) }}" method="GET"  class="btn btn-warning btn-sm">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete
+                                </a>
 
-            </p>
-         
-            <div class="mb-3">
-                <label for="type" class="form-label">Type</label>
-              <select name="type" class="form-control">
-                <option value="">Selected</option>
-                <option value="Theory">Theory</option>
-                <option value="Practical">Practical</option>
+                                
 
-
-              </select>
-            </div>
-            <button type="submit" class="btn btn-success">Submit</button>
-        </form>
-
-        
-        
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 @endsection

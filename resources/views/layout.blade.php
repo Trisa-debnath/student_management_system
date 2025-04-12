@@ -66,30 +66,25 @@
          </a> 
         </li>
         <li>
-            <a href="#courseSubmenu" data-bs-toggle="collapse"><i class="fas fa-book"></i> Teacher</a>
-            <ul class="collapse list-unstyled" id="courseSubmenu">
+        <a href="{{ route('teacher.index') }}" id="courseSubmenu"><i class="fas fa-book"></i> 
                
-                <li><a href="{{ route('teacher.index') }}">Add Teacher</a></li>
-                <li><a href="#">View Teacher</a></li>
+                Teacher</a>
+               
     
-            </ul>
+          
         </li>
       
         <li>
             <a href="#courseSubmenu" data-bs-toggle="collapse"><i class="fas fa-book"></i> Subject</a>
             <ul class="collapse list-unstyled" id="courseSubmenu">
                
-                <li><a href="{{ route('subject.create') }}">Add Subject</a></li>
-                <li><a href="#">View Subject</a></li>
+                <li><a href="{{ route('subject.index') }}">Add Subject</a></li>
+               
     
             </ul>
         </li>
         <li>
-            <a href="#courseSubmenu" data-bs-toggle="collapse"><i class="fas fa-book"></i> Courses</a>
-            <ul class="collapse list-unstyled" id="courseSubmenu">
-                <li><a href="{{ route('course.index') }}">All Courses</a></li>
-                <li><a href="#">View courses</a></li>
-            </ul>
+                <a href="{{ route('course.index') }}" class="collapse list-unstyled" id="courseSubmenu" ><i class="fas fa-book"></i>Courses</a>
         </li>
         
          <a href="{{ route('batches.index') }}"   ><i class="fas fa-book"></i> Batches</a>

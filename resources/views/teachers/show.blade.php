@@ -2,67 +2,27 @@
 @extends('layout')
 
 @section('content')
-    <div class="container">
-        <h1 class="mb-4">Teacher's information</h1>
+    <div class="card">
         
-<div class="message">
-@if(session('success'))
-<h3 class="mb-4">{{session('success')}}</h3>
-@endif
+        <div class="card-header">
+        <h4 class="mb-3">view Teacher</h4>
+        <a href="{{ route('teacher.index') }}" class="btn btn-primary mb-3">Back</a></div>
 
-<a href="{{ route('teacher.index') }}" class="btn btn-primary mb-3">Back</a>
-
-</div>
-
-        <!-- Subject Table -->
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Teacher's Name</th>
-                    <th>Address</th>
-                    <th>Phone</th>
-                    <th>Department</th>
-                    <th>class</th>
-                    <th>Edit</th>
-                    
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($teach as $teacher)
-                    <tr>
-                        <td>{{ $teacher->id }}</td>
-                        <td>{{ $teacher->name }}</td>
-                        <td>{{ $teacher->addrress }}</td>
-                        <td>{{ $teacher->phone }}</td>
-                        <td>{{ $teacher->department }}</td>
-                        <td>{{ $teacher->subject }}</td>
-                    
-                         <td>  <a href="#" method="GET"  class="btn btn-warning btn-sm">Edit</a>
-                            
-                            <form action="#" method="POST" style="display:inline;"></td>
+        <!-- teacher View page-->
+      
+            @csrf
+           
+            <div class="card-body">
+                <h1 class=" card-title">ID:{{$teache->id}}</h1>
+                <p class=" card-title">Name:{{$teache->name}}</p>
+                <p class=" card-text">Type:{{$teache->addrress}}</p>
+                <p class=" card-text">Type:{{$teache->phone}}</p>
+                <p class=" card-text">Type:{{$teache->department}}</p>
+                <p class=" card-text">Type:{{$teache->subject}}</p>
+                
+            </div>
 
 
-                            <td>  <a href="#" method="GET"  class="btn btn-warning btn-sm">View</a></td>
-                           
-                            
-                        <td>
-                        @csrf
-                                @method('DELETE')
-                    
-                                <a href="#" method="GET"  class="btn btn-warning btn-sm">
-                                <button type="submit" class="btn btn-danger btn-sm">Delete
-                                </a>
-
-                                
-
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+          
     </div>
 @endsection
