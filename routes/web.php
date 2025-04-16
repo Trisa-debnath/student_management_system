@@ -6,8 +6,10 @@ use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherrController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\BatchesController;
-use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\EnrollmantController;
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -85,14 +87,22 @@ Route:: get('/batches/delete/{id}',[BatchesController::class,'destroy'])->name('
 
 //enrollment
 
-Route::get('/enroll/index',[EnrollmentController::class,'index'])->name('enroll.index');
-Route::get('/enroll/create',[EnrollmentController::class,'create'])->name('enroll.create');
-Route:: POST('/enroll/store',[EnrollmentController::class,'store'])->name('enroll.store');
-Route::get('/enroll/show/{id}',[EnrollmentController::class,'show'])->name('enroll.show');
-Route:: get('/enroll/edit/{id}',[EnrollmentController::class,'edit'])->name('enroll.edit');
-Route:: POST('/enroll/update/{id}',[EnrollmentController::class,'update'])->name('enroll.update');
-Route:: get('/enroll/delete/{id}',[EnrollmentController::class,'destroy'])->name('enroll.delete');
+Route::get('/enroll/index',[EnrollmantController::class,'index'])->name('enroll.index');
+Route::get('/enroll/create',[EnrollmantController::class,'create'])->name('enroll.create');
+Route:: POST('/enroll/store',[EnrollmantController::class,'store'])->name('enroll.store');
+Route::get('/enroll/show/{id}',[EnrollmantController::class,'show'])->name('enroll.show');
+Route:: get('/enroll/edit/{id}',[EnrollmantController::class,'edit'])->name('enroll.edit');
+Route:: POST('/enroll/update/{id}',[EnrollmantController::class,'update'])->name('enroll.update');
+Route:: get('/enroll/delete/{id}',[EnrollmantController::class,'destroy'])->name('enroll.delete');
 
+//payment
 
+Route::get('/payment/index',[PaymentController::class,'index'])->name('payment.index');
+Route::get('/payment/create',[PaymentController::class,'create'])->name('payment.create');
+Route:: POST('/payment/store',[PaymentController::class,'store'])->name('payment.store');
+Route::get('/payment/show/{id}',[PaymentController::class,'show'])->name('payment.show');
+Route:: get('/payment/edit/{id}',[PaymentController::class,'edit'])->name('payment.edit');
+Route:: POST('/payment/update/{id}',[PaymentController::class,'update'])->name('payment.update');
+Route:: get('/payment/delete/{id}',[PaymentController::class,'destroy'])->name('payment.delete');
 
 

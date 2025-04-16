@@ -17,11 +17,11 @@
                 <label  class="form-label">Course</label>
                  <!-- <input type="text" name="course_id" id="course_id" class="form-control" required>-->
 
-<select name="course_id" id="course_id" class="form-control" >
-    @foreach($courses as $id => $name)
-    <option value="{{$id}}"> {{$name}} </option>
-    @endforeach
-</select>
+         <select name="course_id" id="course_id" class="form-control" >
+           @foreach($courses as $id => $name)
+           <option value="{{$id}}"> {{$name}} </option>
+           @endforeach
+            </select>
 
             </div>
             <div class="mb-3">

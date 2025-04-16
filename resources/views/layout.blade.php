@@ -83,11 +83,14 @@
     
             </ul>
         </li>
+       
+
         <li>
-                <a href="{{ route('course.index') }}" class="collapse list-unstyled" id="courseSubmenu" ><i class="fas fa-book"></i>Courses</a>
+         <a href="{{ route('course.index') }}"><i class="fas fa-book"></i>Courses</a>
         </li>
-        
-         <a href="{{ route('batches.index') }}"   ><i class="fas fa-book"></i> Batches</a>
+
+        <li>
+         <a href="{{ route('batches.index') }}"><i class="fas fa-book"></i> Batches</a>
         </li>
 
         <li>
@@ -95,7 +98,7 @@
         </li>
 
         <li>
-            <a href="#"><i class="fas fa-calendar-check"></i> Attendance</a>
+            <a href="{{ route('payment.index') }}"><i class="fas fa-calendar-check"></i>Payment</a>
         </li>
         <li>
             <a href="#"><i class="fas fa-graduation-cap"></i> Grades</a>

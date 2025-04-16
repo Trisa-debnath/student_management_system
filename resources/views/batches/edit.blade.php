@@ -15,7 +15,7 @@
             </div>
             <div class="mb-3">
                 <label for="course_id" class="form-label">Course_id</label>
-                <input type="text" name="course_id" id="course_id" class="form-control" required value="{{$batc->course_id}}">
+                <input type="text" name="course_id" id="course_id" class="form-control" required value="{{$batc->course->name}}">
             </div>
             <div class="mb-3">
                 <label for="start_date" class="form-label">Start_date</label>

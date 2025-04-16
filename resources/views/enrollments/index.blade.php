@@ -14,7 +14,7 @@
 
 </div>
 
-        <!-- enrollment Table -->
+        <!-- enrollmant Table -->
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -34,8 +34,8 @@
                     <tr>
                         <td>{{ $enrol->id }}</td>
                         <td>{{ $enrol->enroll_no }}</td>
-                        <td>{{ $enrol->batches_id}}</td>
-                        <td>{{ $enrol->student_id}}</td>
+                        <td>{{ $enrol->batches->name}}</td>
+                        <td>{{ $enrol->student->name}}</td>
                         <td>{{ $enrol->join_date}}</td>
                         <td>{{ $enrol->fee}}</td>
                     

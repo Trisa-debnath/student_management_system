@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\enrollment;
+use App\Models\enrollmant;
 use Illuminate\Http\Request;
 
-class EnrollmentController extends Controller
+class EnrollmantController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $enroll = enrollment::all();
+        $enroll = enrollmant::all();
 
         return view('enrollments.index',compact('enroll'));
     }
@@ -40,7 +40,7 @@ class EnrollmentController extends Controller
     ]);
     
     
-   $enro = new enrollment();
+   $enro = new enrollmant();
    $enro->enroll_no = $request ->enroll_no;
    $enro->batches_id = $request ->batches_id;
    $enro->student_id = $request ->student_id;
@@ -55,7 +55,7 @@ class EnrollmentController extends Controller
      */
     public function show($id)
     {
-        $show=enrollment::findOrFail($id);
+        $show=enrollmant::findOrFail($id);
         return view('enrollments.show',compact('show'));
     }
 
@@ -64,7 +64,7 @@ class EnrollmentController extends Controller
      */
     public function edit($id)
     {
-        $enr = enrollment::find($id);
+        $enr = enrollmant::find($id);
         return view('enrollments.edit', compact('enr'));
     }
 
@@ -73,7 +73,7 @@ class EnrollmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        enrollment::where('id',$id)->update
+        enrollmant::where('id',$id)->update
         ([
             'enroll_no'=> $request->enroll_no,
             'batches_id'=> $request->batches_id,
@@ -91,7 +91,7 @@ class EnrollmentController extends Controller
      */
     public function destroy($id)
     {
-        $batche = enrollment::find($id);
+        $batche = enrollmant::find($id);
         $batche->delete();
 
         return redirect()-> route('enroll.index')->with('error','enrollmented deleted successfully.');

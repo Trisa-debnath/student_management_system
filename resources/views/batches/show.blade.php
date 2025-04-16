@@ -14,8 +14,8 @@
            
             <div class="card-body">
                 <h1 class=" card-title">Name:{{$show->name}}</h1>
-                <p class=" card-text">email:{{$show->course_id}}</p>
-                <p class=" card-text">phone:{{$show->start_date}}</p>
+                <p class=" card-text">Course:{{$show->course->name}}</p>
+                <p class=" card-text">Start_date:{{$show->start_date}}</p>
             </div>      
     </div>
 @endsection

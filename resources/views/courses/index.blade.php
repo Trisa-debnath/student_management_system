@@ -35,7 +35,7 @@
                         <td>{{ $courses->syllabus }}</td>
                         <td>{{ $courses->duration()}}</td>
                     
-                            <td>  <a href="#" method="GET"  class="btn btn-warning btn-sm">View</a></td>
+                            <td>  <a href="{{ route('course.show', $courses->id) }}" method="GET"  class="btn btn-warning btn-sm">View</a></td>
                            
                             <td>  <a href="{{ route('course.edit', $courses->id) }}" method="GET"  class="btn btn-warning btn-sm">Edit</a>
                             

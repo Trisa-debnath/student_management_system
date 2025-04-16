@@ -6,7 +6,7 @@
         <h1 class="mb-4">Update Enrollment's information</h1>
         <a href="{{ route('enroll.index') }}" class="btn btn-primary mb-3">Back</a>
 
-        <!-- enrollment edit Form -->
+        <!-- enrollmant edit Form -->
         <form action="{{ route('enroll.update',$enr->id) }}"  method="POST" class="mb-4">
             @csrf
             <div class="mb-3">
