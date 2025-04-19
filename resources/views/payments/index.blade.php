@@ -31,7 +31,7 @@
                 @foreach ($payment as $paym)
                     <tr>
                         <td>{{ $paym->id }}</td>
-                        <td>{{ $paym->enrollmant_id}}</td>
+                        <td>{{ $paym->enrollmant->enroll_no}}</td>
                         <td>{{ $paym->paid_date }}</td>
                         <td>{{ $paym->amount}}</td>
                     

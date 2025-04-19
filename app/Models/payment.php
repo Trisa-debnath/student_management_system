@@ -10,4 +10,10 @@ class payment extends Model
     use HasFactory;
 
     protected $fillable =['enrollmant_id','paid_date','amount'];
+
+    public function enrollmant()
+    {
+        return $this->belongsTo(enrollmant::class);
+    }
+
 }

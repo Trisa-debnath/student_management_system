@@ -14,12 +14,20 @@
                 <input type="text" name="enroll_no" id="enroll_no" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label for="batches_id" class="form-label">Batches_id</label>
-                <input type="text" name="batches_id" id="batches_id" class="form-control" required>
+                <label for="batches_id" class="form-label">Batches</label>
+                <select name="batches_id" id="batches_id" class="form-control" >
+           @foreach($batch as $id => $name)
+           <option value="{{$id}}"> {{$name}} </option>
+           @endforeach
+            </select>
             </div>
             <div class="mb-3">
-                <label for="student_id" class="form-label">Student_id</label>
-                <input type="text" name="student_id" id="student_id" class="form-control" required>
+                <label for="student_id" class="form-label">Student</label>
+                <select name="student_id" id="student_id" class="form-control" >
+           @foreach($student as $id => $name)
+           <option value="{{$id}}"> {{$name}} </option>
+           @endforeach
+            </select>
             </div>
 
             <div class="mb-3">
@@ -31,10 +39,6 @@
                 <label for="fee" class="form-label">Fee</label>
                 <input type="text" name="fee" id="fee" class="form-control" required>
             </div>
-
-
-
-
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
 

@@ -14,7 +14,7 @@
            
             <div class="card-body">
                 <h1 class=" card-title">ID:{{$show->id}}</h1>
-                <h1 class=" card-title">Enrollmant_id:{{$show->enrollmant_id}}</h1>
+                <h1 class=" card-title">Enrollmant_id:{{$show->enrollmant->enroll_no}}</h1>
                 <p class=" card-text">Paid_date:{{$show->paid_date}}</p>
                 <p class=" card-text">Amount:{{$show->amount}}</p>
                 
